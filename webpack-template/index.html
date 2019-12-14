@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Knockout TypeScript</title>
+
+  <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous">
+
+</head>
+<body>
+
+<main class="container">
+  <h1 class="mt-4">Using TypeScript With Knockout.js</h1>
+
+<div id="app">
+
+  <div class="row">
+    <div class="col-sm-12 col-lg-7">
+      <person-read-only params="person: person"></person-read-only>
+    </div>
+    <div class="col-sm-12 col-lg-5 pl-lg-5">
+      <person-editable params="person: person"></person-editable>
+    </div>
+  </div>
+
+</div>
+
+</main>
+
+</body>
+</html>

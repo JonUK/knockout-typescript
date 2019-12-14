@@ -1,0 +1,37 @@
+<div>
+
+  <h2 class="h4 mt-4 mb-3">PersonReadOnly Component</h2>
+
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">Item</th>
+      <th scope="col">Type</th>
+      <th scope="col">Value</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th scope="row">First name</th>
+      <td>Observable&lt;string&gt;</td>
+      <td data-bind="text: person.firstName"></td>
+    </tr>
+    <tr>
+      <th scope="row">Last name</th>
+      <td>Observable&lt;string&gt;</td>
+      <td data-bind="text: person.lastName"></td>
+    </tr>
+    <tr>
+      <th scope="row">Full name</th>
+      <td>PureComputed&lt;string&gt;</td>
+      <td data-bind="text: person.fullName"></td>
+    </tr>
+    <tr>
+      <th scope="row">Favourite films</th>
+      <td>ObservableArray&lt;string&gt;</td>
+      <td data-bind="films: person.favouriteFilms"></td>
+    </tr>
+    </tbody>
+  </table>
+
+</div>
