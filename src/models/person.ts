@@ -10,7 +10,7 @@ class Person {
 
   constructor(firstName: string, lastName: string, favouriteFilms: string[] | null) {
     this.firstName = ko.observable(firstName);
-    this.lastName = ko.observable(false);
+    this.lastName = ko.observable(lastName);
     this.favouriteFilms = ko.observableArray(favouriteFilms || []);
   }
 }

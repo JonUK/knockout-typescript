@@ -1,6 +1,13 @@
 # knockout-typescript
 An example of using TypeScript and Knockout’s type definitions to create view models, components and bindings that are strongly typed.
 
+To run this example, execute the following commands:
+
+```
+npm install
+npm run serve
+```
+
 The following article accompanies this repo.  
 [https://keepinguptodate.com/pages/2019/12/using-typescript-with-knockout/](https://keepinguptodate.com/pages/2019/12/using-typescript-with-knockout/)
 
