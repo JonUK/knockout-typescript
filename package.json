@@ -1,6 +1,6 @@
 {
   "name": "knockout-typescript",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "An example of using TypeScript and Knockout’s type definitions to create view models, components and bindings that are strongly typed.",
   "scripts": {
     "serve": "webpack serve --open",
@@ -8,7 +8,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "knockout": "^3.5.1"
+    "knockout": "^3.5.1",
+    "knockout.validation": "^2.0.4"
   },
   "devDependencies": {
     "@babel/core": "^7.13.14",

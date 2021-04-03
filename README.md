@@ -61,13 +61,37 @@ import { BindingHandler, ObservableArray } from 'knockout';
 
 const filmsBinding = {
   init: (element: HTMLElement, valueAccessor: () => ObservableArray): void => {
-  const valueUnwrapped = ko.unwrap(valueAccessor());
-  const isPopulatedArray = Array.isArray(valueUnwrapped) && valueUnwrapped.length > 0;
-  const text = isPopulatedArray ? valueUnwrapped.join(', ') : 'Unknown';
+    const valueUnwrapped = ko.unwrap(valueAccessor());
+    const isPopulatedArray = Array.isArray(valueUnwrapped) && valueUnwrapped.length > 0;
+    const text = isPopulatedArray ? valueUnwrapped.join(', ') : 'Unknown';
 
-  element.textContent = text;
-}
+    element.textContent = text;
+  }
 } as BindingHandler;
 
 export default filmsBinding;
+```
+
+A view model that uses the Knockout Validation library.
+```javascript
+class ProductDetails {
+  name: Observable<string> = ko.observable('Bananas')
+    .extend({ required: true });
+
+  productCode: Observable<string> = ko.observable()
+    .extend({
+      required: true,
+      minLength: 5,
+      pattern: {
+        message: 'Please enter letters and digits only',
+        params: /^[A-Za-z0-9]*$/
+      }
+    })
+
+  stockCount: Observable<number> = ko.observable()
+    .extend({
+      min: 1,
+      max: 100
+    })
+}
 ```
