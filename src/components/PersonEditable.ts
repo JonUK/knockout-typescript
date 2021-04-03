@@ -4,7 +4,7 @@ import template from './PersonEditable.html';
 class PersonReadOnly {
   person: Person;
 
-  constructor(params: any) {
+  constructor(params: { person: Person }) {
     this.person = params.person;
   }
 }

@@ -25,5 +25,5 @@ class AppViewModel {
   }
 }
 
-
+// Bind Knockout to the "app" element in "webpack-template/index.html"
 ko.applyBindings(new AppViewModel(), document.getElementById('app'));

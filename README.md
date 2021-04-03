@@ -45,7 +45,7 @@ import template from './PersonReadOnly.html';
 class PersonReadOnly {  
   person: Person;  
   
-  constructor(params: any) {  
+  constructor(params: { person: Person }) {  
     this.person = params.person;  
   }  
 }  
@@ -57,17 +57,17 @@ export default { viewModel: PersonReadOnly, template: template };
 A custom binding that conforms to the Knockout interface `BindingHandler`.
 ```javascript
 import * as ko from 'knockout';
-import { BindingHandler } from 'knockout';  
-  
-const filmsBinding = {  
-  init: (element: any, valueAccessor: () => any): void => {  
-    const valueUnwrapped = ko.unwrap(valueAccessor());  
-    const isPopulatedArray = Array.isArray(valueUnwrapped) && valueUnwrapped.length > 0;  
-    const text = isPopulatedArray ? valueUnwrapped.join(', ') : 'Unknown';  
-  
-    element.textContent = text;  
-  }  
-} as BindingHandler;  
-  
+import { BindingHandler, ObservableArray } from 'knockout';
+
+const filmsBinding = {
+  init: (element: HTMLElement, valueAccessor: () => ObservableArray): void => {
+  const valueUnwrapped = ko.unwrap(valueAccessor());
+  const isPopulatedArray = Array.isArray(valueUnwrapped) && valueUnwrapped.length > 0;
+  const text = isPopulatedArray ? valueUnwrapped.join(', ') : 'Unknown';
+
+  element.textContent = text;
+}
+} as BindingHandler;
+
 export default filmsBinding;
 ```
